@@ -9,7 +9,7 @@ Feature: Add notes feature
 		When a note is added
 		Then Verify the added notes
 
-	@two @smoke
+	@two 
 	Scenario: Add notes with url and verify added notes and URL clickable
 		Given Load the url with valid credentials
 		When a note is added with valid url

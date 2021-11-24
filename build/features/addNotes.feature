@@ -5,15 +5,16 @@ Feature: Add notes feature
 
 	@one @smoke
 	Scenario: Add a notes and verify added notes
-		Given Load the url with valid credentials
+		
 		When a note is added
-		Then Verify the added notes
+		Then Verify the addedGiven Load the url with valid credentials notes
 
 	@two 
 	Scenario: Add notes with url and verify added notes and URL clickable
 		Given Load the url with valid credentials
 		When a note is added with valid url
 		Then I verify the added notes
+		
 
 # Scenario: Add notes with File and verify file added
 # When I add the notes with "<file>"

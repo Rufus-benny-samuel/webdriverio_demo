@@ -1,5 +1,5 @@
 class InboxDetails {
-
+//Locators
 	//Add Notes
   get addNoteBtn() {
     return $('//button[@class="fx-c g-btn-secondary round-edge mr-4"]');

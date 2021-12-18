@@ -1,31 +1,14 @@
 /* eslint-disable max-len */
 const commands = require('./build/helpers/customCommands');
-// const video = require('wdio-video-reporter');
-let baseUrl = 'https://my.wellreceived.app';
 const allure = require('allure-commandline')
-
-if (process.env.staging_answerconnect === 'true') baseUrl = 'https://my.staging.answerconnect.app';
-else if (process.env.staging_answerforce === 'true') baseUrl = 'https://my.staging.answerforce.app';
-else if (process.env.staging_lexreception === 'true') baseUrl = 'https://my.staging.lexreception.app';
-else if (process.env.staging_hellosells === 'true') baseUrl = 'https://my.staging.hellosells.app';
-else if (process.env.staging_wellreceived === 'true') baseUrl = 'https://my.staging.lexreception.app';
-else if (process.env.stagingSetmore === 'true') baseUrl = 'https://my.staging.setmore.app/';
-
-if (process.env.live_answerconnect === 'true') baseUrl = 'https://my.answerconnect.app';
-else if (process.env.live_answerforce === 'true') baseUrl = 'https://my.answerforce.app';
-else if (process.env.live_lexreception === 'true') baseUrl = 'https://my.lexreception.app';
-else if (process.env.live_hellosells === 'true') baseUrl = 'https://my.hellosells.app';
-else if (process.env.live_wellreceived === 'true') baseUrl = 'https://my.lexreception.app';
-else if (process.env.liveSetmore === true) baseUrl = 'https://my.setmore.app/';
-
-if (process.env.staging_admin === 'true') baseUrl = 'https://admin.staging.answerconnect.app';
-
 const argv = require("yargs").argv;
 const wdioParallel = require('wdio-cucumber-parallel-execution');
 const sourceSpecDirectory = `./build/features`;
 
 let featureFilePath = `${sourceSpecDirectory}/*.feature`;
 let otherFeaturefilePath = './build/features'
+
+
 // If parallel execution is set to true, then create the Split the feature files
 // And store then in a tmp spec directory (created inside `the source spec directory)
 //if (argv.parallel === 'true') {
@@ -74,26 +57,14 @@ exports.config = {
   // },
   // test
   'specs': [
-		//featureFilePath,
+		featureFilePath,
 		//'./test/inbox/addNotes.spec.js',
 	],
 	'suites': {
 		//feat: [otherFeaturefilePath],
 		temp : [featureFilePath]
 	},
-     //'./build/features/tmp/*.feature',					// to run all scenarios in parallel
-		// './build/features/*.feature',
-    // './test/inbox/addNotes.spec.js',
-    // './test/inbox/markAsVerify.spec.js',
-    // './test/inbox/MoveMessages.spec.js',
-    // './test/inbox/Share.spec.js',
-    // './test/settings/businessline.spec.js',
-    // './test/settings/importContacts.spec.js',
-    // './test/settings/addTeam.spec.js',
-    // './test/settings/notesToReceptionist.spec.js',
-    // './test/settings/contacts.spec.js',
-    // './test/setmore/*.js',
-  //],
+     
   // Patterns to exclude.
   // 'exclude': [
   //   // 'path/to/excluded/files'
@@ -124,7 +95,7 @@ exports.config = {
   'capabilities': [
     {
       'maxInstances': 5,
-      'browserName': 'chrome',
+      'browserName': 'firefox',
       'goog:chromeOptions': {
         // args: ['--headless', '--disable-gpu', '--window-size=1366,768'],
         prefs: {
@@ -203,8 +174,8 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  // 'baseUrl': 'https://mystaging.hellosells.app/',
-  baseUrl,
+  // 'baseUrl': '',
+  baseUrl: 'http://automationpractice.com/',
   //
   // Default timeout for all waitFor* commands.
   'waitforTimeout': 15000,
@@ -220,8 +191,8 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  'services': ['selenium-standalone'],
-  // services: ['chromedriver'],
+   'services': ['selenium-standalone'],
+   // services: ['chromedriver'],
   // services: [
   //   [
   //     'chromedriver',

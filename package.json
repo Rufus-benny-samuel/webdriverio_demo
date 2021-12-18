@@ -8,9 +8,8 @@
     "multiremote test": "npm run remove && npx wdio wdio.multiremote.conf.js",
     "allure": "allure generate allure-results --clean && allure open",
     "test:report": "jest --coverage",
+		"scan": "node sonarqube.js",
     "lint:report": "eslint ./server ./spec --fix -o ./eslint-report.json",
-    "scan": "npm run test:report && npm run lint:report && node sonarqube.js",
-    "scan2": "node sonarqube.js",
     "lint": "eslint --fix --ext .js,.jsx .",
     "setmoreStaging": ""
   },
@@ -36,7 +35,7 @@
     "eslint-plugin-only-warn": "^1.0.3",
     "jest-sonar-reporter": "^2.0.0",
     "mailosaur": "^7.3.1",
-    "sonarqube-scanner": "^2.8.0",
+    "sonarqube-scanner": "^2.8.1",
     "wdio-chromedriver-service": "^6.0.4",
     "wdio-cucumber-parallel-execution": "^3.6.14",
     "wdio-intercept-service": "^4.1.6"
@@ -57,12 +56,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Adaptavant/CWATestCaseAutomation.git"
+    "url": "git+https://github.com/Rufus-benny-samuel/webdriverio_demo.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/Adaptavant/CWATestCaseAutomation/issues"
+    "url": "https://github.com/Rufus-benny-samuel/webdriverio_demo/issues"
   },
-  "homepage": "https://github.com/Adaptavant/CWATestCaseAutomation#readme",
+  "homepage": "https://github.com/Rufus-benny-samuel/webdriverio_demo/issues",
   "description": "CWA Automation"
 }

@@ -18,6 +18,9 @@ class LoginPage {
   get loginBtnEle() {
     return $('//i[@class="icon-lock left"]');
   }
+	get alreadyRegisteredTxt(){
+		return $("//h3[text()='Already registered?']")
+	}
   
   async login(email, password) {
 		await browser.customClick(await this.signInBtn, 'sign-in button')

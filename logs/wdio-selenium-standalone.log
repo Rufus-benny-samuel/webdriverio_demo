@@ -1,0 +1,78 @@
+20:26:49.205 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+20:26:49.266 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2021-04-14 20:26:49.303:INFO::main: Logging initialized @272ms to org.seleniumhq.jetty9.util.log.StdErrLog
+20:26:49.452 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+20:26:49.531 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+20:26:50.223 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "profile.managed_default_content_settings.popups": 1,
+      "profile.managed_default_content_settings.notifications": 1
+    }
+  }
+}
+20:26:50.224 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "firefox",
+  "moz:firefoxOptions": {
+    "args": [
+      "-remote-debugging-port",
+      "56789"
+    ]
+  }
+}
+20:26:50.224 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+20:26:50.224 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.firefox.GeckoDriverService)
+Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 6577
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+1618412211077	geckodriver	INFO	Listening on 127.0.0.1:9878
+1618412211507	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-remote-debugging-port" "56789" "-foreground" "-no-remote" "-profile" "/var/folders/sn/27thnqcn67j_k25xqkq1t5mc0000gp/T/rust_mozprofileMqrSsb"
+20:26:52.165 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "profile.managed_default_content_settings.popups": 1,
+      "profile.managed_default_content_settings.notifications": 1
+    }
+  }
+}
+20:26:52.166 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 20697
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+DevTools listening on ws://localhost:56789/devtools/browser/89f0d74e-fdb9-7340-bf35-f7d5f7abddb5
+20:26:53.871 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "profile.managed_default_content_settings.popups": 1,
+      "profile.managed_default_content_settings.notifications": 1
+    }
+  }
+}
+20:26:53.871 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 22383
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+1618412214013	Marionette	INFO	Listening on port 57301
+20:26:54.092 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+20:26:54.128 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 6c625c84-9810-c141-9e60-c28c10f7d951 (org.openqa.selenium.firefox.GeckoDriverService)
+20:26:54.885 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "profile.managed_default_content_settings.popups": 1,
+      "profile.managed_default_content_settings.notifications": 1
+    }
+  }
+}
+20:26:54.885 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 36613
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.

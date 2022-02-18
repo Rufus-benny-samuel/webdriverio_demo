@@ -1,0 +1,64 @@
+{
+  "name": "webdriverio-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "remove": "rm -rf allure-report && rm -rf allure-results",
+    "test": "npm run remove && npx wdio wdio.conf.js",
+    "multiremote test": "npm run remove && npx wdio wdio.multiremote.conf.js",
+    "allure": "allure generate allure-results --clean && allure open",
+    "test:report": "jest --coverage",
+    "scan": "node sonarqube.js",
+    "lint:report": "eslint ./server ./spec --fix -o ./eslint-report.json",
+    "lint": "eslint --fix --ext .js,.jsx ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wdio-cucumber-parallel-execution": "^3.6.15"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.0",
+    "@wdio/allure-reporter": "^7.16.11",
+    "@wdio/cli": "^7.16.12",
+    "@wdio/cucumber-framework": "^7.16.12",
+    "@wdio/local-runner": "^7.16.12",
+    "@wdio/mocha-framework": "^7.16.11",
+    "@wdio/selenium-standalone-service": "^7.16.11",
+    "@wdio/spec-reporter": "^7.16.11",
+    "@wdio/sync": "^7.16.12",
+    "allure-commandline": "^2.17.2",
+    "chai": "^4.3.4",
+    "chai-arrays": "^2.2.0",
+    "chrome": "^0.1.0",
+    "chromedriver": "^96.0.0",
+    "cucumber-html-reporter": "^5.5.0",
+    "eslint": "^8.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-only-warn": "^1.0.3",
+    "expect-webdriverio": "^3.1.4",
+    "faker": "^5.5.3",
+    "jest-sonar-reporter": "^2.0.0",
+    "sonarqube-scanner": "^2.8.1",
+    "wdio-chromedriver-service": "^7.2.4",
+    "wdio-intercept-service": "^4.2.1",
+    "wdio-webcomponents": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adaptavant/CWATestCaseAutomation.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Adaptavant/CWATestCaseAutomation/issues"
+  },
+  "homepage": "https://github.com/Adaptavant/CWATestCaseAutomation#readme",
+  "description": "CWA Automation"
+}

@@ -29,7 +29,7 @@ Then(/^Verify the added note is (.*) and who add it$/, async (note) => {
   const notesAdded = await browser.customGetText(await inboxRightPage.notesSection, 'Notes section');
   await assert.equal(await notesAdded, note);
 	await browser.customGetText(await inboxRightPage.whoAddedNotes, 'who added note');
-//  await assert.equal(actualLoginName, `Note by ${loggedInUserName}`);
+//await assert.equal(actualLoginName, `Note by ${loggedInUserName}`);
 });
 
 When('a note is added with valid url', async () => {

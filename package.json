@@ -24,6 +24,8 @@
     "test": "test"
   },
   "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "@google-cloud/storage": "^5.18.2",
     "@types/chai": "^4.3.0",
     "@wdio/allure-reporter": "^7.16.11",
     "@wdio/cli": "^7.16.12",
@@ -44,6 +46,7 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-only-warn": "^1.0.3",
     "expect-webdriverio": "^3.1.4",
+    "express": "^4.17.3",
     "faker": "^5.5.3",
     "jest-sonar-reporter": "^2.0.0",
     "sonarqube-scanner": "^2.8.1",

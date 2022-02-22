@@ -63,7 +63,7 @@ class componentPage {
 
 	async enterDetailsOn_shareThroApp(people, notes){
 		await browser.customSetValue(await this.enterPeopleNameOn_shareThroughApp, people);
-		await browser.customSetValue(await this.enterNotesOn_ShareThroughApp, notes)
+		await browser.customSetValue(await this.enterNotesOn_ShareThroughApp, notes);
 	}
 }
 

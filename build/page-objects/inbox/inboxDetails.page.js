@@ -26,7 +26,6 @@ class InboxDetails {
 /* ---------------------------------------------------
 * METHODS THAT CAN BE REUSED IN INBOX DETAILS SECTION
 *-----------------------------------------------------*/
-
 //ADD NOTES METHODS 
   async enterNotes_OnAddNote(note) {
     await browser.customSetValue(await this.addNoteInputField, note, 'Notes');

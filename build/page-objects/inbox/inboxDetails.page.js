@@ -5,7 +5,7 @@ class InboxDetails {
 //ADD NOTES LOCATORS 
   get addNoteBtn() {return $('//button[@class="fx-c g-btn-secondary round-edge mr-4"]');}
   get addNoteInputField() {return $('//textarea[@placeholder="Add to notes"]');}
-  get submitAddNoteEle() {return $('//button[@class="nostyle g-icon-submit active"]');}
+  get submitAddNoteEle() {return $('//button[@class="nostyle g-icon-submit f-0 active"]');}
 	get URLinAddNote() {return $('//div[@class="css-150jb3h"]');}
 	get messageSentToConnectNotification() { return $('//*[local-name()="svg" and @class="g-icon notification"]/p');}
 	get attachmentBtn() { return $('#attach-file');}

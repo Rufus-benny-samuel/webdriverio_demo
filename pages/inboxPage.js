@@ -98,7 +98,7 @@ class InboxPage {
 		return $('//textarea[@placeholder="Add to notes"]');
 	}
 	get submitAddNoteEle() {
-		return $('//button[@class="nostyle g-icon-submit active"]');
+		return $('//button[@class="nostyle g-icon-submit f-0 active"]');
 	}
 	get messageSentToConnectNotification() {
 		return $('//*[local-name()="svg" and @class="g-icon notification"]/p');

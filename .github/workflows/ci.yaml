@@ -10,7 +10,6 @@ jobs:
     steps:
       - name: Install Chromium
         uses: browser-actions/setup-chrome@latest
-        run: chrome --version
         with:
           chrome-version: beta
 

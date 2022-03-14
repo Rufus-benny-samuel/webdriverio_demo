@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Chromium
+        uses: browser-actions/setup-chrome@latest
         run: chrome --version
+        with:
+          chrome-version: beta
 
       - uses: actions/checkout@v2
 

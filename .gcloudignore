@@ -1,0 +1,13 @@
+node_modules
+utils
+test
+pages
+External files
+.scannerwork
+logs
+.whitesource
+
+README.md
+spec
+.dockerignore
+.gitignore

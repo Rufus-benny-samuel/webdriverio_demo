@@ -1,0 +1,6 @@
+projectKey=CWATestCaseAutomation
+serverUrl=https://sonar.anywhere.co
+serverVersion=8.9.0.43852
+dashboardUrl=https://sonar.anywhere.co/dashboard?id=CWATestCaseAutomation
+ceTaskId=AX17jfNwfPPvBForgBIX
+ceTaskUrl=https://sonar.anywhere.co/api/ce/task?id=AX17jfNwfPPvBForgBIX

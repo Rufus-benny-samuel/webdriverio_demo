@@ -98,7 +98,7 @@ exports.config = {
       'browserName': 'chrome',
       
       'goog:chromeOptions': {
-        args: ['--headless', '--disable-gpu', '--window-size=1366,768'],
+       // args: ['--headless', '--disable-gpu', '--window-size=1366,768'],
         prefs: {
           'profile.managed_default_content_settings.popups': 1,
           'profile.managed_default_content_settings.notifications': 1,

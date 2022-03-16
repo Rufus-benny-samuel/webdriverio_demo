@@ -8,7 +8,6 @@ const sourceSpecDirectory = `./build/features`;
 let featureFilePath = `${sourceSpecDirectory}/*.feature`;
 let otherFeaturefilePath = './build/features'
 
-
 // If parallel execution is set to true, then create the Split the feature files
 // And store then in a tmp spec directory (created inside `the source spec directory)
 //if (argv.parallel === 'true') {
@@ -19,22 +18,22 @@ let otherFeaturefilePath = './build/features'
         cleanTmpSpecDirectory: true
     });
     featureFilePath = `${tmpSpecDirectory}/*.feature`
-	// } else {
-	// 	otherFeaturefilePath = './build/features/*.feature'
-	// }
- const drivers = {
- chrome: { version: '98.0.4758.102' }
- }
+  // } else {
+  //  otherFeaturefilePath = './build/features/*.feature'
+  // }
+
+   const drivers = {
+  //   chrome: { version: '99.0.4844.51' }
+    chrome: { version: '98.0.4758.102' }
+   }
+
 exports.config = {
-  //
   // ====================
   // Runner Configuration
   // ====================
-  //
   // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
   // on a remote machine).
   'runner': 'local',
-  //
   // ==================
   // Specify Test Files
   // ==================
@@ -54,15 +53,14 @@ exports.config = {
   //         'profile.managed_default_content_settings.notifications' : 2,
   //     }
   // },
-  // test
   'specs': [
-		 featureFilePath,
-		//'./test/inbox/addNotes.spec.js',
-	],
-	'suites': {
-		//feat: [otherFeaturefilePath],
-		temp : [featureFilePath]
-	},
+     featureFilePath,
+    //'./test/inbox/addNotes.spec.js',
+  ],
+  'suites': {
+    //feat: [otherFeaturefilePath],
+    temp : [featureFilePath]
+  },
      
   // Patterns to exclude.
   // 'exclude': [
@@ -97,17 +95,17 @@ exports.config = {
       'browserName': 'chrome',
       
       'goog:chromeOptions': {
-        args: ['--headless', '--disable-gpu', '--window-size=1366,768'],
+       args: ['--headless', '--disable-gpu', '--window-size=1366,768'],
         prefs: {
           'profile.managed_default_content_settings.popups': 1,
           'profile.managed_default_content_settings.notifications': 1,
         },
         binary: process.env.executablePath
       },
-		},
-	// 	{
-	// 	'browserName': 'firefox',
-	// },
+    },
+  //  {
+  //  'browserName': 'firefox',
+  // },
   ],
 
   // capabilities: {
@@ -176,8 +174,8 @@ exports.config = {
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
   // 'baseUrl': '',
-  baseUrl: 'https://pre-alpha.answerconnect.app/',
-  //
+  //baseUrl: 'https://pre-alpha.answerconnect.app/',
+  baseUrl:'',
   // Default timeout for all waitFor* commands.
   'waitforTimeout': 15000,
   //
@@ -192,21 +190,22 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
- //  'services': ['selenium-standalone'],
-   services: [
-    ['chromedriver', {
-        logFileName: 'wdio-chromedriver.log', // default
-        outputDir: 'driver-logs', // overwrites the config.outputDir
-        args: ['--silent'],
-  //       chromedriverCustomPath: '/Users/rufus/Downloads/chromedriver'
-    }]
-  ],
-
-  // services:[ ['chromedriver', {
-  //     //logPath: 'logs',
-  //     installArgs: { drivers }, // drivers to install
-  //     args: { drivers } // drivers to use
-  // }]],
+  // 'services': ['selenium-standalone'],
+    'services': [
+        ['selenium-standalone', {
+            logPath: 'logs',
+            installArgs: { drivers }, // drivers to install
+            args: { drivers } // drivers to use
+        }]
+    ],
+  //  services: [
+  //   ['chromedriver', {
+  //       logFileName: 'wdio-chromedriver.log', // default
+  //       outputDir: 'driver-logs', // overwrites the config.outputDir
+  //       args: ['--silent'],
+  //       chromedriverCustomPath: '/Users/yokesh/Downloads/chromedriver'
+  //   }]
+  // ],
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: https://webdriver.io/docs/frameworks.html
@@ -221,7 +220,7 @@ exports.config = {
     failFast: false, // Fail on first step, useful for debugging
     snippets: true, // Show pending step suggestions
     ignoreUndefinedDefinitions: true, // Treat undefined definitions as warnings
-		timeout: 60000
+    timeout: 60000
   },
   //
   // The number of times to retry the entire specfile when it fails as a whole
@@ -242,7 +241,7 @@ exports.config = {
   //   //   videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
   //   //   outputDir: 'video-reporting',
   //   // }],
-  //   [
+    [
       'allure',
       {
         outputDir: 'allure-results',
@@ -250,7 +249,7 @@ exports.config = {
         disableWebdriverScreenshotsReporting: true,
       },
     ],
-  // ],
+  ],
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   'mochaOpts': {
@@ -414,11 +413,11 @@ exports.config = {
  */
   // onReload: function(oldSessionId, newSessionId) {
   // }
-	// onPrepare: () => {
+  // onPrepare: () => {
   //       // Remove the `tmp/` folder that holds the json report files
   //       removeSync(parallelExecutionReportDirectory);
   //   },
-		// onComplete: () => {
+    // onComplete: () => {
 
     //     try{
     //         let consolidatedJsonArray = wdioParallel.getConsolidatedData({
@@ -445,13 +444,14 @@ exports.config = {
     //         console.log('err', err);
     //     }
     // }
-		 onComplete: function() {
+      onComplete: function() {
         const reportError = new Error('Could not generate Allure report')
-     //   const generation = allure(['generate', 'allure-results', '--clean'])
+        const generation = allure(['generate', 'allure-results', '--clean'])
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
                 5000)
+
             generation.on('exit', function(exitCode) {
                 clearTimeout(generationTimeout)
 

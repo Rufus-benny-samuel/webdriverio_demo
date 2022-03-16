@@ -12,7 +12,7 @@ const myProfilePage = require('../page-objects/settings/myProfile.page');
 let loggedInUserName;
 Given('Load the url with valid credentials', async () => {
 	await browser.maximizeWindow();
-	await browser.url('./');
+	await browser.url('https://pre-alpha.answerconnect.app/');
   await loginPage.login(data.credentials.emailID_answerConnect, data.credentials.pwd);
 });
  

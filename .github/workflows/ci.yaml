@@ -5,6 +5,30 @@ on:
       - "gcpConfig"
 
 jobs:
+  job_id:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+      - id: auth
+      uses: google-github-actions/auth@v0
+      with:
+        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        service_account: 'my-service-account@my-project.iam.gserviceaccount.com'
+
+    - name: Deploy cloud function
+      id: 'deploy'
+      uses: 'google-github-actions/deploy-cloud-functions@v0'
+      with:
+        name: 'cwa'
+        runtime: 'nodejs14'
+        entry_point: 'inboxSettings'
+
+    # Example of using the output
+    - name: test the url
+      id: 'test'
+      run: 'curl "${{ steps.deploy.outputs.url }}"'
+
   build:
     runs-on: ubuntu-latest
     steps:

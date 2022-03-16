@@ -33,7 +33,7 @@
     "chai-arrays": "^2.2.0",
     "chrome": "^0.1.0",
     "chrome-aws-lambda": "^10.1.0",
-    "chromedriver": "^96.0.0",
+    "chromedriver": "^98.0.0",
     "cucumber-html-reporter": "^5.5.0",
     "cucumberjs-parallel": "^2.0.1",
     "eslint": "^8.6.0",

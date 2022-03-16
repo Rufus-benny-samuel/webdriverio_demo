@@ -2,6 +2,4 @@
 video-reporting
 allure-*
 .secrets
-build/features/tmp
-data.js
 GCP

@@ -1,6 +1,6 @@
 class myProfilePage {
 	
-get loginUserName() { return $('//h2[@class="heading"]');}
+get loginUserName() { return $('//h2[@class="heading g-text-capitalize"]');}
 get myProfileTab() { return $('//a[text()="My Profile"]')}
 
 async getLoggedInUserName () {

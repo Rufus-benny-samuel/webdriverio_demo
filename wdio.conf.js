@@ -194,8 +194,8 @@ exports.config = {
     'services': [
         ['selenium-standalone', {
             logPath: 'logs',
-            installArgs: { drivers }, // drivers to install
-            args: { drivers } // drivers to use
+            installArgs: { drivers },
+            args: { drivers }
         }]
     ],
   //  services: [

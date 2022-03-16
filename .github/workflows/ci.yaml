@@ -23,15 +23,3 @@ jobs:
 
       - run: live_answerconnect=true npm run test
         name: Running E2E tests
-        continue-on-error: true
-      
-      - name: Setup SSH Keys and known_hosts
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${{ secrets.AUTOMATION_KEY_RUFUS }}"
-      - name: Some task that fetches dependencies
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: ./upload-securely.sh

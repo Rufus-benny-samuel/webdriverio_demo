@@ -22,10 +22,9 @@ let otherFeaturefilePath = './build/features'
 	// } else {
 	// 	otherFeaturefilePath = './build/features/*.feature'
 	// }
-// const drivers = {
-// chrome: { version: '86.0.4240.22' }
-// chrome: { version: '89.0.4389.82' }
-// {
+ const drivers = {
+ chrome: { version: '98.0.4758.102' }
+ }
 exports.config = {
   //
   // ====================
@@ -98,7 +97,7 @@ exports.config = {
       'browserName': 'chrome',
       
       'goog:chromeOptions': {
-       // args: ['--headless', '--disable-gpu', '--window-size=1366,768'],
+        args: ['--headless', '--disable-gpu', '--window-size=1366,768'],
         prefs: {
           'profile.managed_default_content_settings.popups': 1,
           'profile.managed_default_content_settings.notifications': 1,

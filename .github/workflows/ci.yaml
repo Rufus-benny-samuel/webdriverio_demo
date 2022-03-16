@@ -3,7 +3,7 @@ on:
   pull_request:
     branches:
       - "gcpConfig"
-
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:

@@ -236,20 +236,20 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
-  // 'reporters': [
+   'reporters': [
   //   // [video, {
   //   //   saveAllVideos: false, // If true, also saves videos for successful test cases
   //   //   videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
   //   //   outputDir: 'video-reporting',
   //   // }],
   //   [
-  //     'allure',
-  //     {
-  //       outputDir: 'allure-results',
-  //       disableWebdriverStepsReporting: true,
-  //       disableWebdriverScreenshotsReporting: true,
-  //     },
-  //   ],
+      'allure',
+      {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+      },
+    ],
   // ],
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
@@ -452,17 +452,16 @@ exports.config = {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
                 5000)
+            generation.on('exit', function(exitCode) {
+                clearTimeout(generationTimeout)
 
-            // generation.on('exit', function(exitCode) {
-            //     clearTimeout(generationTimeout)
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
 
-            //     if (exitCode !== 0) {
-            //         return reject(reportError)
-            //     }
-
-            //     console.log('Allure report successfully generated')
-            //     resolve()
-            // })
+                console.log('Allure report successfully generated')
+                resolve()
+            })
         })
     }
 }

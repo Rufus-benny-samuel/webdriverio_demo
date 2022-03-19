@@ -23,7 +23,6 @@ let otherFeaturefilePath = './build/features'
   // }
 
    const drivers = {
-  //   chrome: { version: '99.0.4844.51' }
     chrome: { version: '98.0.4758.102' }
    }
 
@@ -47,12 +46,6 @@ exports.config = {
       'profile.managed_default_content_settings.notifications': 2,
     },
   },
-  // chromeOptions: {
-  //     prefs: {
-  //         'profile.managed_default_content_settings.popups' : 2,
-  //         'profile.managed_default_content_settings.notifications' : 2,
-  //     }
-  // },
   'specs': [
      featureFilePath,
     //'./test/inbox/addNotes.spec.js',
@@ -194,8 +187,8 @@ exports.config = {
     'services': [
         ['selenium-standalone', {
             logPath: 'logs',
-            installArgs: { drivers }, // drivers to install
-            args: { drivers } // drivers to use
+            installArgs: { drivers },
+            args: { drivers }
         }]
     ],
   //  services: [

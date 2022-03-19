@@ -11,8 +11,8 @@ Feature: Add notes feature
 		When 4th message is opened and a note "test note" is added
 		Then Verify the added note is "test note" and who add it
 
-#@TC101 @regression @inbox @addnotes
-#Scenario: Add notes with url and verify added notes and URL clickable
-#	Given Load the url with valid credentials
-#	When a note is added with valid url
-#	Then verify whether the link attached is clickable or not
+	@TC101 @regression @inbox @addnotes
+	Scenario: Add notes with url and verify added notes and URL clickable
+		Given Load the url with valid credentials
+		When a note is added with valid url
+		Then verify whether the link attached is clickable or not

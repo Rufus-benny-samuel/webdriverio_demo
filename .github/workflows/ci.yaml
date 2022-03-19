@@ -24,7 +24,6 @@ jobs:
       - id: "deploy"
         uses: "google-github-actions/deploy-cloud-functions@v0"
         with:
-          # Name of the Cloud Function, same as the entry point name
           name: "inboxSettings"
           runtime: "nodejs14"
 

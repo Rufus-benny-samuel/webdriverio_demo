@@ -1,25 +1,32 @@
 name: Continuous Integration
 on:
-  pull_request:
+  push:
     branches:
-      - "gcpConfig"
-      
+      - "githubActions"
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Install Chromium
-        run: sudo apt-get install chromium-browser
 
+    permissions:
+      contents: "read"
+      id-token: "write"
+
+    steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+      - id: "auth"
+        name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v0"
         with:
-          node-version: 14.x
+          service_account: "bc-inbound-module-automation@appspot.gserviceaccount.com"
 
-      - run: npm install
-        name: Install dependencies
+      - id: "deploy"
+        uses: "google-github-actions/deploy-cloud-functions@v0"
+        with:
+          # Name of the Cloud Function, same as the entry point name
+          name: "inboxSettings"
+          runtime: "nodejs14"
 
-      - run: prealpha=true npm run test
-        name: Running E2E tests
+      - id: "test"
+        run: 'curl "${{ steps.deploy.outputs.url }}"'

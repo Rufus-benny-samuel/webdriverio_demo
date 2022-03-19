@@ -19,7 +19,7 @@ jobs:
         name: "Authenticate to Google Cloud"
         uses: "google-github-actions/auth@v0"
         with:
-          service_account: "bc-inbound-module-automation@appspot.gserviceaccount.com"
+          credentials_json: '${{ secrets.mySecret }}'
 
       - id: "deploy"
         uses: "google-github-actions/deploy-cloud-functions@v0"

@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - id: "auth"
-        name: "Authenticate to GoogleCloud"
+        name: "Authenticate to Google Cloud"
         uses: "google-github-actions/auth@v0"
         with:
           credentials_json: ${{ secrets.mywdio-gcp-demo@appspot.gserviceaccount.comSecret }}

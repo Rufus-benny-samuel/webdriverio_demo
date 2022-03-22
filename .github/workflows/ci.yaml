@@ -19,7 +19,7 @@ jobs:
         name: "Authenticate to Google Cloud"
         uses: "google-github-actions/auth@v0"
         with:
-          #credentials_json: ${{ secrets.mywdio-gcp-demo@appspot.gserviceaccount.comSecret }}
+          service_account: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
           workload_identity_provider: 'gh-pool'
 
       - id: "deploy"

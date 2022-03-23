@@ -15,13 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: "auth"
-        name: "Authenticate to Google Cloud"
-        uses: "google-github-actions/auth@v0"
-        with:
-          service_account: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
-          workload_identity_provider: 'gh-pool'
-
       - id: "deploy"
         uses: "google-github-actions/deploy-cloud-functions@v0"
         with:

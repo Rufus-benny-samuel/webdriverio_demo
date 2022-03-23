@@ -20,6 +20,7 @@ jobs:
         with:
           name: "inboxSettings"
           runtime: "nodejs16"
+          project_id: "wdio-gcp-demo"
 
       - id: "test"
         run: https://us-central1-wdio-gcp-demo.cloudfunctions.net/CWA

@@ -22,5 +22,11 @@ jobs:
           service_account: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
           workload_identity_provider: 'gh-pool'
 
+      - id: "deploy"
+        uses: "google-github-actions/deploy-cloud-functions@v0"
+        with:
+          name: "inboxSettings"
+          runtime: "nodejs14"
+
       - id: "test"
         run: https://us-central1-wdio-gcp-demo.cloudfunctions.net/CWA

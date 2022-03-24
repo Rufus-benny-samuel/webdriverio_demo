@@ -15,17 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: 'auth'
-      uses: 'google-github-actions/auth@v0'
-      with:
-        credentials_json: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
+      - id: "auth"
+        name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v0"
+        with:
+          credentials_json: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
 
       - id: "deploy"
         uses: "google-github-actions/deploy-cloud-functions@v0"
         with:
           name: "inboxSettings"
-          runtime: "nodejs16"
-          project_id: "wdio-gcp-demo"
+          runtime: "nodejs14"
 
       - id: "test"
         run: https://us-central1-wdio-gcp-demo.cloudfunctions.net/CWA

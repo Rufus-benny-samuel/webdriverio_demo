@@ -21,6 +21,3 @@ jobs:
         with: 
           workload_identity_provider: "https://iam.googleapis.com/projects/821675916808/locations/global/workloadIdentityPools/gh-pool/providers/cwa123"
           service_account: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
-
-      - id: "test"
-        run: https://us-central1-wdio-gcp-demo.cloudfunctions.net/CWA

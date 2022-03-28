@@ -27,3 +27,6 @@ jobs:
         with:
           name: "inboxSettings"
           runtime: "nodejs14"
+
+      - id: 'test'
+      run: 'curl "${{ steps.deploy.outputs.url }}"'

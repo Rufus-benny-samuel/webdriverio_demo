@@ -5,28 +5,29 @@ on:
       - "githubActions"
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  job_id:
     permissions:
       contents: "read"
       id-token: "write"
 
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - id: "auth"
+    - id: "auth"
         name: "Authenticate to Google Cloud"
         uses: "google-github-actions/auth@v0"
         with:
           service_account: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
           workload_identity_provider: “https://iam.googleapis.com/projects/821675916808/locations/global/workloadIdentityPools/gh-pool/providers/inboxsettings”
 
-      - id: "deploy"
+    - id: "deploy"
         uses: "google-github-actions/deploy-cloud-functions@v0.1.0"
         with:
           name: "inboxSettings"
           runtime: "nodejs16"
+          project_id: "wdio-gcp-demo"
+          entry_point: "inboxSettings"
+          memory_mb: "4096mb"
 
-      - id: 'test'
+    - id: 'test'
       run: 'curl "${{ steps.deploy.outputs.url }}"'

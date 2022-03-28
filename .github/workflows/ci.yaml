@@ -27,9 +27,6 @@ jobs:
         with:
           name: "inboxSettings"
           runtime: "nodejs16"
-          project_id: "wdio-gcp-demo"
-          entry_point: "inboxSettings"
-          memory_mb: "4096mb"
 
       - id: 'test'
       run: 'curl "${{ steps.deploy.outputs.url }}"'

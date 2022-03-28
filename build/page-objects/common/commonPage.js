@@ -1,4 +1,4 @@
-class CommonPage {
+    class CommonPage {
   get inboxTab() {
     return $('//i[@data-tips="Inbox"]');
   }

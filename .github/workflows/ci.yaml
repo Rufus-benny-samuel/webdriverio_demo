@@ -21,3 +21,9 @@ jobs:
         with: 
           workload_identity_provider: "https://iam.googleapis.com/projects/821675916808/locations/global/workloadIdentityPools/gh-pool/providers/cwa123"
           service_account: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
+
+     - id: "deploy"
+        uses: "google-github-actions/deploy-cloud-functions@v0"
+        with:
+          name: "inboxSettings"
+          runtime: "nodejs14"

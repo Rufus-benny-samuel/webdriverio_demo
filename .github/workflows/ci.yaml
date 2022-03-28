@@ -18,11 +18,11 @@ jobs:
       - id: "auth"
         name: "Authenticate to Google Cloud"
         uses: "google-github-actions/auth@v0"
-        with: 
-          workload_identity_provider: "https://iam.googleapis.com/projects/821675916808/locations/global/workloadIdentityPools/gh-pool/providers/cwa123"
+        with:
           service_account: "githubactions@wdio-gcp-demo.iam.gserviceaccount.com"
+          workload_identity_provider: “https://iam.googleapis.com/projects/821675916808/locations/global/workloadIdentityPools/gh-pool/providers/cwa123”
 
-     - id: "deploy"
+      - id: "deploy"
         uses: "google-github-actions/deploy-cloud-functions@v0"
         with:
           name: "inboxSettings"
